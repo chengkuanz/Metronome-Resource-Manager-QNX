@@ -1,10 +1,9 @@
 # Build artifacts
 
-*.o
-*.d
+
 *.bin
 *.elf
-*.exe
+
 
 # IDE and project files
 .project
