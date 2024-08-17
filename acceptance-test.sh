@@ -1,6 +1,6 @@
 #######################################################################
 ## - Acceptance Test Script
-## - Assignment 2 - Metronome
+## -  Metronome
 #######################################################################
 echo "Unit Test [C] \n"
 echo "/dev/local/metronome\n"
