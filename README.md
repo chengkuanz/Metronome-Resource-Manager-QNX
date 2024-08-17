@@ -56,3 +56,55 @@ echo start > /dev/local/metronome
 
 # Terminate the metronome resource manager
 echo quit > /dev/local/metronome
+```
+
+## Installation and Setup
+
+### Prerequisites
+
+- **QNX Momentics IDE**: Required to build and run the project.
+- **QNX Neutrino RTOS**: The target operating system for running the metronome.
+
+### Setting Up the Project
+
+1. **Clone the Project**: Download or clone the project from the repository.
+
+2. **Import the Project into QNX Momentics**:
+    - Open QNX Momentics IDE.
+    - Create a new workspace.
+    - Import the project by selecting `File > Import... > General > Existing Projects into Workspace`.
+
+3. **Build the Project**:
+    - Clean and build the project by selecting `Project > Clean...` and then `Project > Build All`.
+
+4. **Copy the binary files** to the target machine's `/tmp` folder.
+
+### Running the Project
+
+1. **Start the Metronome**:
+    - Navigate to `/tmp` and run the metronome with the desired parameters:
+
+```
+cd /tmp
+./metronome <bpm> <ts-top> <ts-bottom> &
+
+```
+
+
+2. **Interact with the Metronome**:
+    - Use the `echo` commands provided in the API section to control the metronome.
+
+3. **Monitor and Modify**:
+    - Use `cat` commands to check the current settings and modify them as needed using `echo` commands.
+
+### Exiting the Program
+
+- To terminate the metronome, use:
+
+```
+echo quit > /dev/local/metronome
+```
+
+## Acceptance Test Script
+
+Create an acceptance test script named `acceptance-test.sh` to validate the functionality of the metronome according to the provided scenarios.
