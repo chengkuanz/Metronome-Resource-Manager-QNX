@@ -1,0 +1,128 @@
+# ./acceptance-test.sh 
+Unit Test [C] 
+
+/dev/local/metronome
+
+[metronome: 120 beats/min, time signature: 2/4, sec-per-interval: 0.25, nanoSecs: 250000000]
+Unit Test [D] 
+
+/dev/local/metronome-help
+
+Metronome Resource Manager (ResMgr)
+
+Usage: metronome <bpm> <ts-top> <ts-bottom>
+
+API:
+pause[1-9]                     -pause the metronome for 1-9 seconds
+quit                           -quit the metronome
+set <bpm> <ts-top> <ts-bottom> -set the metronome to <bpm> ts-top/ts-bottom
+start                          -start the metronome from stopped state
+stop                           -stop the metronome; use 'start' to resume
+Unit Test [E] 
+
+set 100 2 4 > /dev/local/metronome
+
+Unit Test [F] 
+
+[metronome: 100 beats/min, time signature: 2/4, sec-per-interval: 0.30, nanoSecs: 300000000]
+/dev/local/metronome
+
+Unit Test [G] 
+
+set 200 5 4 > /dev/local/metronome
+
+Unit Test [H] 
+
+[metronome: 200 beats/min, time signature: 5/4, sec-per-interval: 0.38, nanoSecs: 375000000]
+/dev/local/metronome
+
+Unit Test [I] 
+
+ 3002393   1 ./metronome         10r RECEIVE     1                           
+ 3002393   2 ./metronome          2r RECEIVE     4                           
+stop > /dev/local/metronome && pidin | grep metronome
+
+Unit Test [j] 
+
+ 3002393   1 ./metronome         10r RECEIVE     1                           
+ 3002393   2 ./metronome          2r RECEIVE     4                           
+start > /dev/local/metronome && pidin | grep metronome
+
+Unit Test [k] 
+
+[metronome: 200 beats/min, time signature: 5/4, sec-per-interval: 0.38, nanoSecs: 375000000]
+/dev/local/metronome
+
+Unit Test [l] 
+
+ 3002393   1 ./metronome         10r RECEIVE     1                           
+ 3002393   2 ./metronome          2r RECEIVE     4                           
+stop > /dev/local/metronome && pidin | grep metronome
+
+Unit Test [m] 
+
+ 3002393   1 ./metronome         10r RECEIVE     1                           
+ 3002393   2 ./metronome          2r RECEIVE     4                           
+stop > /dev/local/metronome && pidin | grep metronome
+
+Unit Test [n] 
+
+ 3002393   1 ./metronome         10r RECEIVE     1                           
+ 3002393   2 ./metronome          2r RECEIVE     4                           
+start > /dev/local/metronome && pidin | grep metronome
+
+Unit Test [o] 
+
+ 3002393   1 ./metronome         10r RECEIVE     1                           
+ 3002393   2 ./metronome          2r RECEIVE     4                           
+start > /dev/local/metronome && pidin | grep metronome
+
+Unit Test [p] 
+
+[metronome: 200 beats/min, time signature: 5/4, sec-per-interval: 0.38, nanoSecs: 375000000]
+/dev/local/metronome
+
+Unit Test [q] 
+
+pause 3 > /dev/local/metronome
+
+Unit Test [r] 
+
+pause 10 > /dev/local/metronome
+
+Unit Test [s] 
+
+bogus > /dev/local/metronome
+
+Unit Test [t] 
+
+set 120 2 4 > /dev/local/metronome
+
+Unit Test [u] 
+
+[metronome: 120 beats/min, time signature: 2/4, sec-per-interval: 0.25, nanoSecs: 250000000]
+/dev/local/metronome
+
+Unit Test [v] 
+
+Metronome Resource Manager (ResMgr)
+
+Usage: metronome <bpm> <ts-top> <ts-bottom>
+
+API:
+pause[1-9]                     -pause the metronome for 1-9 seconds
+quit                           -quit the metronome
+set <bpm> <ts-top> <ts-bottom> -set the metronome to <bpm> ts-top/ts-bottom
+start                          -start the metronome from stopped state
+stop                           -stop the metronome; use 'start' to resume
+/dev/local/metronome-help
+
+Unit Test [w] 
+
+Writes-Not-Allowed > /dev/local/metronome-help
+
+Unit Test [x] 
+
+quit > /dev/local/metronome && pidin | grep metronome
+
+ALL TEST COMPLETE
