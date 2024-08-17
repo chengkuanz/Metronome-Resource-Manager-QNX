@@ -1,0 +1,2 @@
+# Metronome-Resource-Manager-QNX
+ his project is a simulation of a metronome resource manager designed for the CST8244 - Real-Time Programming course. The metronome operates using timers to produce a rhythmic pattern based on specified beats per minute (BPM) and time signatures. The metronome supports commands to pause, start, stop, and configure its settings through a custom API. It is implemented as a QNX resource manager, allowing it to interact with the system through a designated device file `/dev/local/metronome`.
