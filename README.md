@@ -113,7 +113,7 @@ To run the acceptance test script, copy the 'acceptance-test.sh' file to the tar
 This script verifies the correct behavior of the metronome in response to different inputs and scenarios, ensuring the system meets the specified requirements.
 
 <details>
-  <summary>des_inputs</summary>
+  <summary>acceptance-test.sh</summary>
     <pre><code>
 #######################################################################
 ## - Acceptance Test Script
