@@ -2,9 +2,9 @@
 
 ## Overview
 
-This project is a simulation of a metronome resource manager designed for the CST8244 - Real-Time Programming course. The metronome operates using timers to produce a rhythmic pattern based on specified beats per minute (BPM) and time signatures. The metronome supports commands to pause, start, stop, and configure its settings through a custom API. It is implemented as a QNX resource manager, allowing it to interact with the system through a designated device file `/dev/local/metronome`.
+This project is a metronome simulation developed as part of the CST8244 - Real-Time Programming course. The metronome operates using timers to produce a rhythmic pattern based on specified beats per minute (BPM) and time signatures. The metronome supports commands to pause, start, stop, and configure its settings through a custom API. It is implemented as a QNX resource manager, allowing it to interact with the system through a designated device file `/dev/local/metronome`.
 
-The project demonstrates the use of multi-threading, pulse messaging, and real-time timer management in a QNX environment. It also handles concurrent command inputs while maintaining the metronome's timing accuracy.
+The project demonstrates the use of **multi-threading**, **pulse messaging**, and real-time **timer implementation** for in a QNX environment. It also handles concurrent command inputs while maintaining the metronome's timing accuracy.
 
 ## Author
 [Chengkuan Zhao](https://github.com/chengkuanz)     
@@ -28,6 +28,9 @@ May 2024 - August 2024
 - **echo set <bpm> <ts-top> <ts-bottom> > /dev/local/metronome**: Configures the metronome with a new BPM and time signature. The metronome adjusts its behavior accordingly.
 - **echo start > /dev/local/metronome**: Starts the metronome if it is in a stopped state.
 - **echo stop > /dev/local/metronome**: Stops the metronome while keeping the resource manager running.
+- **echo quit > /dev/local/metronome**: Gracefully terminates the metronome.
+- **echo help > /dev/local/metronome**: Displays help information regarding the available commands and their usage.
+
 
 ### Error Handling
 
@@ -85,9 +88,9 @@ echo quit > /dev/local/metronome
     - Navigate to `/tmp` and run the metronome with the desired parameters:
 
 ```
-cd /tmp
-./metronome <bpm> <ts-top> <ts-bottom> &
-
+cd ../../../
+cd tmp
+./metronome <bpm> <ts-top> <ts-bottom> 
 ```
 
 
@@ -107,4 +110,10 @@ echo quit > /dev/local/metronome
 
 ## Acceptance Test Script
 
-Create an acceptance test script named `acceptance-test.sh` to validate the functionality of the metronome according to the provided scenarios.
+The acceptance-test.sh script automates the testing of the metronome's functionality. The script covers various scenarios, including starting, stopping, pausing, and changing settings.
+
+To run the acceptance test script:
+```
+./acceptance-test.sh
+```
+This script verifies the correct behavior of the metronome in response to different inputs and scenarios, ensuring the system meets the specified requirements.
