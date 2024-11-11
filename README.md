@@ -6,6 +6,14 @@ This project is a metronome simulation designed as part of the CST8244 - Real-Ti
 
 The project demonstrates the use of **multi-threading**, **pulse messaging**, **resource managers**, **timers**, and **message passing**. These technologies are employed to create a responsive and accurate metronome that can be controlled via simple command-line interactions.
 
+## Demo Video
+
+
+
+https://github.com/user-attachments/assets/d40793ac-ab0c-4f8b-8dad-7abf7b41f732
+
+
+
 ## Authors
 
 [Chengkuan Zhao](https://github.com/chengkuanz)  
